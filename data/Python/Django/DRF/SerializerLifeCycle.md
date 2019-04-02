@@ -11,3 +11,9 @@ def fun(a):
     return a + 2
 ```
 # Deserialization
+
+```javascript
+function tata() {
+  console.log("tata");
+}
+```

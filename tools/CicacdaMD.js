@@ -1,10 +1,21 @@
 import MarkdownIt from "markdown-it";
 import MarkdownItMeta from "markdown-it-meta";
 import Plugin from "markdown-it-regexp";
+import { highlight, getLanguage } from "highlightjs";
+import "highlightjs/styles/github.css";
 
 export function CicadaMD({ content }) {
     const options = {
         linkify: true,
+        highlight: function (str, lang) {
+            if (lang && getLanguage(lang)) {
+                try {
+                    return highlight(lang, str).value;
+                } catch (__) {}
+            }
+
+            return ''; // use external default escaping
+        }
     };
     const md = new MarkdownIt(options);
     md.use(MarkdownItMeta);
@@ -30,7 +41,9 @@ export function CicadaMD({ content }) {
                     <small className="text-muted">{md.meta.date}</small>
                 )}
             </div>
-            <div dangerouslySetInnerHTML={{ __html: html }} />
+            <div className="markdown">
+                <div dangerouslySetInnerHTML={{ __html: html }} />
+            </div>
         </div>
     );
 }
