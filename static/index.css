@@ -1,4 +1,14 @@
-ul.page-tree, .page-tree ul {
+ul.file-tree, .file-tree ul {
     list-style-type: none;
     padding-left: 1em;
+}
+
+.nav-link-tree {
+    font-weight: 500;
+    font-size:0.8rem;
+    color: #333;
+}
+
+.nav-link-tree svg{
+    height: 14px;
 }
