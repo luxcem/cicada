@@ -22,11 +22,28 @@ function FileNode({ name, path }) {
     );
 }
 
-export function FileTree({ fileTree, currentPath }) {
+export function FileTree({ fileTree, currentPath, root = false }) {
     const { name, type, path, children } = fileTree;
     const [visible, setVisible] = useState(
         currentPath.startsWith(path) || path == ""
     );
+    if (root) {
+        return (
+            <ul className="file-tree nav flex-column">
+                {children &&
+                    children.map(child => (
+                        <li key={child.path} className="nav-item">
+                            {
+                                <FileTree
+                                    fileTree={child}
+                                    currentPath={currentPath}
+                                />
+                            }
+                        </li>
+                    ))}
+            </ul>
+        );
+    }
     return (
         <ul className="file-tree nav flex-column">
             <li key={path} className="nav-item">
