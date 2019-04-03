@@ -13,6 +13,10 @@ ul.file-tree, .file-tree ul {
     height: 14px;
 }
 
+code {
+    font-family: monospace;
+}
+
 .markdown pre {
     background-color: #f6f8fa;
     border-radius: 3px;
@@ -21,3 +25,16 @@ ul.file-tree, .file-tree ul {
     overflow: auto;
     padding: 16px;
 }
+
+p > code {
+    background-color: #f6f8fa;
+    border-radius: 3px;
+    padding: 3px;
+    color: inherit;
+}
+
+.markdown h1 { font-size: 2rem; }
+.markdown h2 { font-size: 1.75rem; }
+.markdown h3 { font-size: 1.5rem; }
+.markdown h4 { font-size: 1.25rem; }
+.markdown h5 { font-size: 1rem; }

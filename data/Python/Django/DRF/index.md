@@ -1,3 +1,0 @@
----
-title: Django Rest Framework
----
