@@ -2,6 +2,7 @@ const express = require("express");
 const next = require("next");
 
 const serveIndex = require("./serveIndex");
+const searchIndex = require("../tools/CicadaSearch");
 
 const PORT = process.env.PORT || 3000;
 const dev = process.env.NODE_DEV !== "production";
@@ -15,6 +16,11 @@ nextApp.prepare().then(() => {
     // express code here
     const app = express();
     app.use("/data", express.static(dataDirectory), serveIndex(dataDirectory));
+    app.get("/s/", (req, res) => {
+        // console.log(res);
+        res.setHeader("Content-Type", "application/json");
+        res.end(JSON.stringify(searchIndex.search(req.query.q)));
+    });
     // Home page
     app.get("/", (req, res) => {
         return nextApp.render(req, res, "/index", { path: "index.md" });
