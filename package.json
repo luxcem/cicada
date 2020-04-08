@@ -16,7 +16,7 @@
         "next": "9.3.4",
         "react": "16.13.1",
         "react-dom": "16.13.1",
-        "react-feather": "2.0.3",
+        "react-feather": "2.0.4",
         "serve-index": "1.9.1"
     },
     "scripts": {
