@@ -14,8 +14,8 @@
         "markdown-it-meta": "0.0.1",
         "markdown-it-regexp": "0.4.0",
         "next": "8.1.0",
-        "react": "16.13.1",
-        "react-dom": "16.13.1",
+        "react": "16.14.0",
+        "react-dom": "16.14.0",
         "react-feather": "2.0.8",
         "serve-index": "1.9.1"
     },
