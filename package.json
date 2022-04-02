@@ -27,7 +27,7 @@
     "author": "luxcem <a@luxcem.fr>",
     "license": "ISC",
     "devDependencies": {
-        "prettier": "2.6.1"
+        "prettier": "2.6.2"
     },
     "prettier": {
         "tabWidth": 4,
